@@ -1,19 +1,10 @@
 clear;
 close;
 
-%% PART I- DATA IMPORT
-
-
-%% Initialize variables.
-
-% For lab computer
-
-path = 'C:\Documents and Settings\nilesh\My Documents\MATLAB\MKY1';
-                % filename = 'path''C:\Documents and Settings\nilesh\My Documents\MATLAB\MKY1\modelfit.txt';
-filename = strcat(path,'\SH Programs\TIV_barlat\equispaced.txt');
-
-% for home computer
-% filename = 'C:\Users\Intel\Documents\MATLAB\TIV Feb 19\realTIV\equispaced.txt'; %equispaced modelfit.txt
+% path = 'C:\Documents and Settings\nilesh\My Documents\MATLAB\MKY1';
+%                 % filename = 'path''C:\Documents and Settings\nilesh\My Documents\MATLAB\MKY1\modelfit.txt';
+% filename = strcat(path,'\SH Programs\TIV_barlat\equispaced.txt');
+filename = 'equispaced.txt';
 
 %%
 
@@ -51,16 +42,28 @@ set(data, 'Tstart',0.0024, 'TimeUnit', 's');%0.0024
 
 %% Parameter initialization
 
-Ls = 0.8e-7; %m
+% Ls = 0.8e-7; %m
+% M = 3.01;
+% b = 2.86e-10; % m
+% k1 = 0.13;
+% k2= .2;
+% kL =1.1;
+% alpha = 1/3;
+% G = 26e3; %MPa
+% sigma_i =10; % 93.86; %MPa
+% rhof0 = 1e8;   %m-2
+
+Ls = 8e-7; %m
 M = 3.01;
 b = 2.86e-10; % m
-k1 = 0.13;
-k2= .2;
-kL =1.1;
+k1 = 0.013;
+k2= .1;
+kL =.1;
 alpha = 1/3;
 G = 26e3; %MPa
-sigma_i =10; % 93.86; %MPa
-rhof0 = 1e8;   %m-2
+sigma_i =50; % 93.86; %MPa
+rhof0 = 1e10;   %m-2
+
 param = [k1,k2,kL,Ls,M,b,alpha,sigma_i,G];                         
 parameters    = {param(1), param(2), param(3), param(4), param(5), param(6), param(7), param(8), param(9)}; 
 
